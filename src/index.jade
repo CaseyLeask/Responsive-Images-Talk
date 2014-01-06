@@ -25,7 +25,7 @@ html
         h1 Responsive Images are still an unsolved problem
 
       section
-        h2.bullet Options I'm ignoring in this talk
+        h2.bullet Options I'm ignoring
         hr
         ul
           li Image Processing
@@ -34,9 +34,15 @@ html
 
       section
         h2 Standard Image
+        pre
+          code.language-markup.
+            &lt;img src="./images/Kevin.jpg" alt="Kevin the Gopher" &gt;
 
       section
         h2 Standard Image with srcset
+        pre
+          code.language-markup.
+            &lt;img src="./images/kevin.jpg" srcset="./images/kevin-2x.jpg 2x" alt="Kevin the Gopher" &gt;
 
       section
         h2 Picture Proposal
@@ -68,15 +74,16 @@ html
         h2 Picturefill Markup
         pre
           code.language-markup.
-            &lt;span data-picture data-alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia"&gt;
+            &lt;span data-picture data-alt="The Bayon temple in Cambodia"&gt;
               &lt;span data-src="small.jpg"&gt;&lt;/span&gt;
               &lt;span data-src="medium.jpg"     data-media="(min-width: 400px)"&gt;&lt;/span&gt;
               &lt;span data-src="large.jpg"      data-media="(min-width: 800px)"&gt;&lt;/span&gt;
               &lt;span data-src="extralarge.jpg" data-media="(min-width: 1000px)"&gt;&lt;/span&gt;
 
-              &lt;!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. --&gt;
+              &lt;!-- Fallback content for non-JS browsers. 
+                   Same img src as the initial, unqualified source element. --&gt;
               &lt;noscript&gt;
-                &lt;img src="small.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia"&gt;
+                &lt;img src="small.jpg" alt="The Bayon temple in Cambodia"&gt;
               &lt;/noscript&gt;
             &lt;/span&gt;
 
@@ -106,31 +113,18 @@ html
         h3 Use in inline images
         pre
           code.language-markup.
-            &lt;img src="./images/phone.jpg" data-mq-src="./images/[breakpoint].jpg"&gt;
+            &lt;img src="./images/phone.jpg" data-mq-src="./images/[breakpoint].jpg" alt="Description" &gt;
         p Or
         pre
           code.language-markup.
-            &lt;img data-mq-src="./images/[breakpoint].jpg"&gt;
+            &lt;img data-mq-src="./images/[breakpoint].jpg" alt="Description"&gt;
             &lt;noscript&gt;
-              &lt;img src="./images/phone.jpg"&gt;
+              &lt;img src="./images/phone.jpg" alt="Description"&gt;
             &lt;/noscript&gt;
 
       section(data-bespoke-state='emphatic')
         h2 Emphatic Slide!
         h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
-
-      section
-        h2.bullet Just the beginning...
-        hr
-        ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
-        hr
-        ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
