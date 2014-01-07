@@ -50,12 +50,6 @@ article
     perspective: 600px
 
 .bespoke-slide
-  transition:
-    transform slide_transition_length slide_transition_easing,
-    opacity slide_transition_length slide_transition_easing,
-    background slide_transition_length slide_transition_easing
-  transform-origin: 50% 50% 0
-  backface-visibility: hidden
   display: flex
   flex-direction: column
   justify-content: center
@@ -93,8 +87,19 @@ article
   @media print
     opacity 1
 
+.bespoke-slide
+  for i in (1..10)
+    > *:nth-child({i})
+      transition: opacity slide_transition_length slide_transition_easing slide_transition_length * (i - 1)
+
 .bespoke-active
   opacity: 1
+  > *
+    opacity: 1
+
+.bespoke-inactive
+  > *
+    opacity: 0
 
 // bespoke-bullet styles
 
@@ -148,9 +153,25 @@ article
 .emphatic,
 .emphatic .bespoke-slide
   background: slide_background
+
 .bootstrap,
 .bootstrap .bespoke-slide
   background: #573d7d
+  color: white
+
+.frameless,
+.frameless .bespoke-slide
+  background: white
+  color: black
+
+.ben,
+.ben .bespoke-slide
+  background: black
+  color: white
+
+.responsivenews,
+.responsivenews .bespoke-slide
+  background: #cc0001
   color: white
 
 // prism styles
@@ -165,6 +186,10 @@ body
   font-family: helvetica, arial, sans-serif
   font-size: 18px
   color: #404040
+
+img
+  max-width: 100%
+  max-height: 100%
 
 h1
   font-size: 72px

@@ -16,7 +16,12 @@ html
     article
 
       section
+        .byline This talk is called
         h1 Responsive Images
+        .byline by this guy
+        img(src="images/profile.jpeg", style="border-radius:50%;")
+        .byline
+          a(href="http://twitter.com/CaseyLeask") @CaseyLeask
 
       section
         h1 This talk contains HTML, CSS &amp; Javascript
@@ -24,7 +29,7 @@ html
       section
         h1 Examples of Responsive Design
 
-      section(style="background: white;")
+      section(data-bespoke-state='frameless')
         img(src="images/frameless.png")
 
       section(data-bespoke-state='bootstrap')
@@ -45,16 +50,23 @@ html
             h2 CSS Background images
 
       section
+        h1 HTML Spec &amp; Proposals
+
+      section
         h2 Standard Image
         pre
           code.language-markup.
-            &lt;img src="./images/kevin.jpg" alt="Kevin the Gopher" &gt;
+            &lt;img src="./images/kevin.png" alt="Kevin the Gopher" &gt;
+        hr
+        img(src="images/kevin.png", alt="Kevin the Gopher")
 
       section
         h2 Standard Image with srcset
         pre
           code.language-markup.
-            &lt;img src="./images/kevin.jpg" srcset="./images/kevin-2x.jpg 2x" alt="Kevin the Gopher" &gt;
+            &lt;img src="./images/kevin.png" srcset="./images/kevin-2x.png 2x" alt="Kevin the Gopher" &gt;
+        hr
+        img(src="images/kevin-2x.png", alt="Kevin the Gopher")
 
       section
         h2 Picture Proposal
@@ -83,7 +95,13 @@ html
            &lt;/picture&gt; 
 
       section
-        h2 Picturefill, by @scottjehl
+        h1 Javascript solutions
+
+      section
+        h1 Picturefill, by @scottjehl
+        img(src="images/scottjehl.jpeg", style="border-radius: 2em;")
+
+      section
         pre
           code.language-markup.
             &lt;span data-picture data-alt="The Bayon temple in Cambodia"&gt;
@@ -99,9 +117,13 @@ html
               &lt;/noscript&gt;
             &lt;/span&gt;
 
-      section
-        h2 Metaquery, by @benschwarz
-        h3 Define your breakpoints in &lt;meta&gt; tags.
+      section(data-bespoke-state='ben')
+        h1 Metaquery, by @benschwarz
+        img(src="images/benschwarz.png")
+
+      section(data-bespoke-state='ben')
+        h2 Define your breakpoints in &lt;meta&gt; tags.
+        hr
         pre
           code.language-markup.
             &lt;meta name="breakpoint" content="phone" media="(max-width: 479px)"&gt;
@@ -109,9 +131,9 @@ html
             &lt;meta name="breakpoint" content="tablet" media="(min-width: 600px) and (max-width: 1023px)"&gt;
             &lt;meta name="breakpoint" content="widescreen" media="(min-width: 1024px)"&gt;
 
-      section
-        h2 Metaquery Markup
-        h3 style off those breakpoints
+      section(data-bespoke-state='ben')
+        h2 style off those breakpoints
+        hr
         pre
           code.language-css
             &nbsp;.breakpoint-phone { background: red; }
@@ -119,13 +141,15 @@ html
             &nbsp;.breakpoint-tablet { background: blue; }
             &nbsp;.breakpoint-widescreen { background: yellow; }
 
-      section
-        h2 Metaquery Markup
-        h3 Use in inline images
+      section(data-bespoke-state='ben')
+        h2 Use in images
+        hr
         pre
           code.language-markup.
             &lt;img src="./images/phone.jpg" data-mq-src="./images/[breakpoint].jpg" alt="Description" &gt;
-        p Or
+        hr
+        h2 Or
+        hr
         pre
           code.language-markup.
             &lt;img data-mq-src="./images/[breakpoint].jpg" alt="Description"&gt;
@@ -133,23 +157,59 @@ html
               &lt;img src="./images/phone.jpg" alt="Description"&gt;
             &lt;/noscript&gt;
 
+      section(data-bespoke-state='responsivenews')
+        h1 Imager, by @ResponsiveNews
+        img(src="images/responsivenews.jpg")
+
+      section(data-bespoke-state='responsivenews')
+        h2 This placeholder div
+        pre
+          code.language-markup.
+            &lt;div style="width: 240px"&gt;
+              &lt;div class="delayed-image-load" data-src="http://placehold.it/{width}"
+                                              data-alt="alternative text"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;script&gt;
+              new Imager({ availableWidths: [200, 260, 320, 600] });
+            &lt;/script&gt;
+
+      section(data-bespoke-state='responsivenews')
+        h2 Becomes this
+        pre
+          code.language-markup.
+            &lt;div style="width: 240px"&gt;
+              &lt;img src="http://placehold.it/260" data-src="http://placehold.it/{width}"
+                   alt="alternative text" class="image-replace"&gt;
+            &lt;/div&gt;
+
+            &lt;script&gt;
+              new Imager({ availableWidths: [200, 260, 320, 600] });
+            &lt;/script&gt;
+
       section(data-bespoke-state='emphatic')
-        img(src="images/profile.jpeg", style="border-radius:20px;")
+        img(src="images/profile.jpeg", style="border-radius:50%;")
         hr
-        h2 Thanks!
+        h1 Thanks!
         h3
           a(href="twitter.com/caseyleask") @CaseyLeask
 
       section(data-bespoke-state='emphatic')
-        h2 Resources
-        h3 Twitter Bootstrap (http://getbootstrap.com/)
-        h3 Frameless (http://framelessgrid.com/)
+        h1 Resources
+        h3 
+          a(href="http://getbootstrap.com/") Twitter Bootstrap
+        h3 
+          a(href="http://framelessgrid.com/") Frameless
+        h3
+          a(href="http://responsivenews.co.uk/post/50092458307/images") BBC Responsive News Technique
         h3
           a(href="http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/") Choosing a Responsive Image Solution
         h3
           a(href="https://github.com/benschwarz/metaquery") Metaquery
         h3
           a(href="https://github.com/scottjehl/picturefill") Picturefill
+        h3
+          a(href="https://github.com/BBC-News/Imager.js/") Imager
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
