@@ -16,27 +16,34 @@ html
     article
 
       section
-        h1 Responsive Images Talk
+        h1 Responsive Images
 
       section
         h1 This talk contains HTML, CSS &amp; Javascript
+
+      section(style="background: white;")
+        h2 Less Framework (http://lessframework.com/)
+        img(src="./rwd.jpeg")
 
       section
         h1 Responsive Images are still an unsolved problem
 
       section
-        h2.bullet Options I'm ignoring
+        h1.bullet Options I'm ignoring
         hr
         ul
-          li Image Processing
-          li Server Side solutions
-          li CSS Background images
+          li 
+            h2 Image Processing
+          li
+            h2 Server Side solutions
+          li
+            h2 CSS Background images
 
       section
         h2 Standard Image
         pre
           code.language-markup.
-            &lt;img src="./images/Kevin.jpg" alt="Kevin the Gopher" &gt;
+            &lt;img src="./images/kevin.jpg" alt="Kevin the Gopher" &gt;
 
       section
         h2 Standard Image with srcset
@@ -71,7 +78,7 @@ html
            &lt;/picture&gt; 
 
       section
-        h2 Picturefill Markup
+        h2 Picturefill, by @scottjehl
         pre
           code.language-markup.
             &lt;span data-picture data-alt="The Bayon temple in Cambodia"&gt;
@@ -88,15 +95,14 @@ html
             &lt;/span&gt;
 
       section
-        h2 Metaquery Markup
+        h2 Metaquery, by @benschwarz
         h3 Define your breakpoints in &lt;meta&gt; tags.
         pre
           code.language-markup.
-            &lt;meta name="breakpoint" content="phone" media="(max-width: 480px)"&gt;
-            &lt;meta name="breakpoint" content="small-tablet" media="(min-width: 480px) and (max-width: 600px)"&gt;
-            &lt;meta name="breakpoint" content="tablet" media="(min-width: 600px) and (max-width: 1024px)"&gt;
+            &lt;meta name="breakpoint" content="phone" media="(max-width: 479px)"&gt;
+            &lt;meta name="breakpoint" content="small-tablet" media="(min-width: 480px) and (max-width: 599px)"&gt;
+            &lt;meta name="breakpoint" content="tablet" media="(min-width: 600px) and (max-width: 1023px)"&gt;
             &lt;meta name="breakpoint" content="widescreen" media="(min-width: 1024px)"&gt;
-            &lt;meta name="breakpoint" content="retina" media="only screen and (-webkit-min-device-pixel-ratio : 2)"&gt;
 
       section
         h2 Metaquery Markup
@@ -123,8 +129,11 @@ html
             &lt;/noscript&gt;
 
       section(data-bespoke-state='emphatic')
-        h2 Emphatic Slide!
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
+        h2 Thanks!
+        h3 @CaseyLeask
+        h2 Resources
+        h3 http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/
+
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
