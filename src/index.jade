@@ -129,11 +129,20 @@ html
             &lt;/noscript&gt;
 
       section(data-bespoke-state='emphatic')
+        img(src="./profile.jpeg", style="border-radius:20px;")
+        hr
         h2 Thanks!
-        h3 @CaseyLeask
-        h2 Resources
-        h3 http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/
+        h3
+          a(href="twitter.com/caseyleask") @CaseyLeask
 
+      section(data-bespoke-state='emphatic')
+        h2 Resources
+        h3
+          a(href="http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/") Choosing a Responsive Image Solution
+        h3
+          a(href="https://github.com/benschwarz/metaquery") Metaquery
+        h3
+          a(href="https://github.com/scottjehl/picturefill") Picturefill
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
