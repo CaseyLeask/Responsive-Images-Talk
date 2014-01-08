@@ -5,7 +5,8 @@
 
 slide_width = 1024px
 slide_height = 768px
-slide_background = #eaeaea
+page_background = azure
+slide_background = rgba(255, 255, 255, 0.4)
 
 slide_transition_length = .6s
 slide_transition_easing = ease
@@ -16,6 +17,8 @@ slide_transition_nudge_x = -100px
 bullet_transition_length = .3s
 bullet_transition_easing = ease
 bullet_transition_translate_x = 16px
+
+text_color = #404040
 
 // base
 
@@ -37,6 +40,7 @@ bullet_transition_translate_x = 16px
 article
   transition: background slide_transition_length slide_transition_easing
   display: none
+  background: page_background
   &.bespoke-parent
     display: block
     position: absolute
@@ -188,19 +192,38 @@ pre
   border-radius: 8px
 
 // content styles
+.byline, .row
+  width: 100%
+  margin: 20px 0
+  display: -webkit-box
+  box-align: center
+.byline
+  font-size: 1.5em
+  color: text_color
+  &::before, &::after
+    content: ''
+    display: block
+    box-flex: 1
+    height: 0
+    padding-top: 1px
+    border-bottom: 1px dotted text_color
+  > *
+    margin-right: 20px
+    &:first-child
+      margin-left: 20px
 
 body
-  font-family: helvetica, arial, sans-serif
+  font-family: source_sans_pro, helvetica, arial, sans-serif
   font-size: 18px
-  color: #404040
+  color: text_color
 
 img
   max-width: 100%
   max-height: 100%
 
 h1
-  font-size: 72px
-  line-height: 82px
+  font-size: 4em
+  line-height: 1.1em
   letter-spacing: -2px
   margin-bottom: 16px
 
