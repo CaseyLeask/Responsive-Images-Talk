@@ -40,14 +40,9 @@ html
 
       section
         h1.bullet Options I'm ignoring
-        hr
-        ul
-          li 
-            h2 Image Processing
-          li
-            h2 Server Side solutions
-          li
-            h2 CSS Background images
+        h2 Image Processing
+        h2 Server Side solutions
+        h2 CSS Background images
 
       section
         h1 HTML Spec &amp; Proposals
@@ -97,11 +92,11 @@ html
       section
         h1 Javascript solutions
 
-      section
+      section(data-bespoke-state='picturefill')
         h1 Picturefill, by @scottjehl
         img(src="images/scottjehl.jpeg", style="border-radius: 2em;")
 
-      section
+      section(data-bespoke-state='picturefill')
         pre
           code.language-markup.
             &lt;span data-picture data-alt="The Bayon temple in Cambodia"&gt;
@@ -117,11 +112,11 @@ html
               &lt;/noscript&gt;
             &lt;/span&gt;
 
-      section(data-bespoke-state='ben')
+      section(data-bespoke-state='metaquery')
         h1 Metaquery, by @benschwarz
         img(src="images/benschwarz.png")
 
-      section(data-bespoke-state='ben')
+      section(data-bespoke-state='metaquery')
         h2 Define your breakpoints in &lt;meta&gt; tags.
         hr
         pre
@@ -131,7 +126,7 @@ html
             &lt;meta name="breakpoint" content="tablet" media="(min-width: 600px) and (max-width: 1023px)"&gt;
             &lt;meta name="breakpoint" content="widescreen" media="(min-width: 1024px)"&gt;
 
-      section(data-bespoke-state='ben')
+      section(data-bespoke-state='metaquery')
         h2 style off those breakpoints
         hr
         pre
@@ -141,7 +136,7 @@ html
             &nbsp;.breakpoint-tablet { background: blue; }
             &nbsp;.breakpoint-widescreen { background: yellow; }
 
-      section(data-bespoke-state='ben')
+      section(data-bespoke-state='metaquery')
         h2 Use in images
         hr
         pre
@@ -213,7 +208,6 @@ html
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
-    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
     script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
     script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
     script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
