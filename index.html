@@ -8,50 +8,199 @@
   </head>
   <body>
     <article>
+      <section></section>
       <section>
-        <h1>Responsive Images Talk</h1>
+        <div class="byline">
+          <div class="classy">This talk is called</div>
+        </div>
+        <h1>Responsive Images</h1>
+        <div class="byline">
+          <div class="classy">by this guy</div>
+        </div><img src="images/profile.jpeg" style="border-radius:50%;">
+        <div class="byline"><a href="http://twitter.com/CaseyLeask">@<span class="classy">CaseyLeask</span></a></div>
       </section>
       <section>
-        <h2>Bullet List</h2>
-        <h3 class="bullet">Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a></h3>
-        <ul>
-          <li>Bullet 1</li>
-          <li>Bullet 2</li>
-          <li>Bullet 3</li>
-        </ul>
+        <h1>This talk contains HTML, CSS &amp; not much Javascript</h1>
       </section>
       <section>
-        <h2>Syntax Highlighting</h2>
-        <h3 class="bullet">Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a></h3>
+        <h1>Examples of Responsive Design Frameworks</h1>
+      </section>
+      <section data-bespoke-state="frameless"><img src="images/frameless.png"></section>
+      <section data-bespoke-state="bootstrap"><img src="images/twitterbootstrap.png"></section>
+      <section>
+        <h1>Responsive Images are still an unsolved problem</h1>
+      </section>
+      <section>
+        <h1>None of these solutions handle all use-cases</h1>
+      </section>
+      <section>
+        <h2>What I'm not going to talk about</h2>
+        <h4>Image Processing</h4>
+        <h4>Server Side solutions</h4>
+        <h4>CSS Background images</h4>
+      </section>
+      <section>
+        <h1>HTML Spec &amp; Proposals</h1><img src="images/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo and Wordmark">
+      </section>
+      <section>
+        <h2>A standard Image</h2>
+        <pre><code class="language-markup">&lt;img src="./images/kevin.png" alt="Kevin the Gopher" &gt;</code></pre>
         <hr>
-        <pre><code class="language-javascript">bespoke.horizontal.from('article', {
-  bullets: 'li, .bullet',
-  hash: true,
-  state: true
-});
+        <div><img src="images/kevin.png" alt="Kevin the Gopher"></div>
+      </section>
+      <section>
+        <h2>A standard Image with srcset</h2>
+        <pre><code class="language-markup">&lt;img src="./images/kevin.png" srcset="./images/kevin-2x.png 2x" alt="Kevin the Gopher" &gt;</code></pre>
+        <hr>
+        <div><img src="images/kevin-2x.png" alt="Kevin the Gopher"></div>
+      </section>
+      <section>
+        <h2>Picture Proposal</h2>
+        <hr>
+        <pre><code class="language-markup">&lt;picture width="500" height="500"&gt;
+   &lt;source media="(min-width: 45em)" src="large.jpg"&gt;
+   &lt;source media="(min-width: 18em)" src="med.jpg"&gt;
+   &lt;source src="small.jpg"&gt;
+   &lt;img src="small.jpg" alt=""&gt;
+   &lt;p&gt;Accessible text&lt;/p&gt;
+&lt;/picture&gt;
 </code></pre>
       </section>
-      <section data-bespoke-hash="named-route">
-        <h2>Named Route</h2>
-        <h3 class="bullet">Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a></h3>
-        <p>Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.</p>
-      </section>
-      <section data-bespoke-state="emphatic">
-        <h2>Emphatic Slide!</h2>
-        <h3 class="bullet">Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a></h3>
+      <section>
+        <h2>Picture Proposal (with srcset)</h2>
+        <hr>
+        <pre><code class="language-markup">&lt;picture width="500" height="500"&gt;
+  &lt;source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x"&gt;
+  &lt;source media="(min-width: 18em)" srcset="med-1.jpg 1x, med-2.jpg 2x"&gt;
+  &lt;source srcset="small-1.jpg 1x, small-2.jpg 2x"&gt;
+  &lt;img src="small-1.jpg" alt=""&gt;
+  &lt;p&gt;Accessible text&lt;/p&gt;
+&lt;/picture&gt; 
+</code></pre>
       </section>
       <section>
-        <h2 class="bullet">Just the beginning...</h2>
+        <h1>Javascript solutions</h1>
+      </section>
+      <section data-bespoke-state="picturefill">
+        <h2>Picturefill, by @scottjehl</h2><img src="images/scottjehl.jpeg" style="border-radius: 2em;">
+      </section>
+      <section data-bespoke-state="picturefill">
+        <h2>Mimics the proposed Picture element</h2>
+        <pre><code class="language-markup">&lt;span data-picture data-alt="The Bayon temple in Cambodia"&gt;
+  &lt;span data-src="small.jpg"&gt;&lt;/span&gt;
+  &lt;span data-src="medium.jpg"     data-media="(min-width: 400px)"&gt;&lt;/span&gt;
+  &lt;span data-src="large.jpg"      data-media="(min-width: 800px)"&gt;&lt;/span&gt;
+  &lt;span data-src="extralarge.jpg" data-media="(min-width: 1000px)"&gt;&lt;/span&gt;
+  
+  &lt;!-- Fallback content for non-JS browsers. 
+       Same img src as the initial, unqualified source element. --&gt;
+  &lt;noscript&gt;
+    &lt;img src="small.jpg" alt="The Bayon temple in Cambodia"&gt;
+  &lt;/noscript&gt;
+&lt;/span&gt;
+</code></pre>
+      </section>
+      <section data-bespoke-state="picturefill">
+        <h2>How it actually runs</h2>
+        <pre><code class="language-markup">&lt;span data-picture="" data-alt="The Bayon temple in Cambodia"&gt;
+  &lt;span data-src="small.jpg"&gt;&lt;/span&gt;
+  &lt;span data-src="medium.jpg" data-media="(min-width: 400px)"&gt;&lt;/span&gt;
+  &lt;span data-src="large.jpg" data-media="(min-width: 800px)"&gt;&lt;/span&gt;
+  &lt;span data-src="extralarge.jpg" data-media="(min-width: 1000px)"&gt;
+    &lt;img alt="The Bayon temple in Cambodia" src="extralarge.jpg"&gt;
+  &lt;/span&gt;
+  
+  &lt;!-- Fallback content for non-JS browsers.
+       Same img src as the initial, unqualified source element. --&gt;
+  &lt;noscript&gt;
+    &lt;img src="small.jpg" alt="The Bayon temple in Cambodia"&gt;
+  &lt;/noscript&gt;
+&lt;/span&gt;
+</code></pre>
+      </section>
+      <section data-bespoke-state="metaquery">
+        <h1>Metaquery, by @benschwarz</h1><img src="images/benschwarz.png">
+      </section>
+      <section data-bespoke-state="metaquery">
+        <h2>Define your breakpoints in &lt;meta&gt; tags.</h2>
         <hr>
-        <ul>
-          <li>Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em></li>
-          <li>Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em></li>
-          <li>Edit JavaScript in <em>'src/scripts/main.js'</em></li>
-        </ul>
+        <pre><code class="language-markup">&lt;meta name="breakpoint" content="phone" media="(max-width: 479px)"&gt;
+&lt;meta name="breakpoint" content="small-tablet" media="(min-width: 480px) and (max-width: 599px)"&gt;
+&lt;meta name="breakpoint" content="tablet" media="(min-width: 600px) and (max-width: 1023px)"&gt;
+&lt;meta name="breakpoint" content="widescreen" media="(min-width: 1024px)"&gt;
+</code></pre>
+      </section>
+      <section data-bespoke-state="metaquery">
+        <h1>Use those breakpoints in two ways</h1>
+      </section>
+      <section data-bespoke-state="metaquery">
+        <h2>First, style off those breakpoints</h2>
         <hr>
-        <ul>
-          <li><strong>Enjoy! :)</strong><a href="http://twitter.com/markdalgleish"> -@markdalgleish</a></li>
-        </ul>
+        <pre><code class="language-css">&nbsp;.breakpoint-phone { background: red; }
+&nbsp;.breakpoint-small-tablet { background: green; }
+&nbsp;.breakpoint-tablet { background: blue; }
+&nbsp;.breakpoint-widescreen { background: yellow; }</code></pre>
+      </section>
+      <section data-bespoke-state="metaquery">
+        <h2>And use in image markup</h2>
+        <hr>
+        <pre><code class="language-markup">&lt;img src="./images/phone.jpg" data-mq-src="./images/[breakpoint].jpg" alt="Description" &gt;</code></pre>
+        <hr>
+        <h2>Or</h2>
+        <hr>
+        <pre><code class="language-markup">&lt;img data-mq-src="./images/[breakpoint].jpg" alt="Description"&gt;
+&lt;noscript&gt;
+  &lt;img src="./images/phone.jpg" alt="Description"&gt;
+&lt;/noscript&gt;
+</code></pre>
+      </section>
+      <section data-bespoke-state="metaquery">
+        <h1>Image markup may get removed and become a plugin later</h1>
+      </section>
+      <section data-bespoke-state="responsivenews">
+        <h1>Imager, by @ResponsiveNews</h1><img src="images/responsivenews.jpg">
+      </section>
+      <section data-bespoke-state="responsivenews">
+        <h2>This placeholder div</h2>
+        <pre><code class="language-markup">&lt;div style="width: 240px"&gt;
+  &lt;div class="delayed-image-load" data-src="http://placehold.it/{width}"
+                                  data-alt="alternative text"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  new Imager({ availableWidths: [200, 260, 320, 600] });
+&lt;/script&gt;
+</code></pre>
+      </section>
+      <section data-bespoke-state="responsivenews">
+        <h2>Becomes this</h2>
+        <pre><code class="language-markup">&lt;div style="width: 240px"&gt;
+  &lt;img src="http://placehold.it/260" data-src="http://placehold.it/{width}"
+       alt="alternative text" class="image-replace"&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  new Imager({ availableWidths: [200, 260, 320, 600] });
+&lt;/script&gt;
+</code></pre>
+      </section>
+      <section data-bespoke-state="responsivenews">
+        <h1>Only solution to do 'element queries'</h1>
+      </section>
+      <section data-bespoke-state="emphatic"><img src="images/profile.jpeg" style="border-radius:50%;">
+        <hr>
+        <h1>Thanks!</h1>
+        <h4><a href="twitter.com/caseyleask">@CaseyLeask</a></h4>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h1>Resources</h1>
+        <h4><a href="http://getbootstrap.com/">Twitter Bootstrap</a></h4>
+        <h4><a href="http://framelessgrid.com/">Frameless</a></h4>
+        <h4><a href="http://responsivenews.co.uk/post/50092458307/images">BBC Responsive News Technique</a></h4>
+        <h4><a href="http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/">Choosing a Responsive Image Solution</a></h4>
+        <h4><a href="https://github.com/benschwarz/metaquery">Metaquery</a></h4>
+        <h4><a href="https://github.com/scottjehl/picturefill">Picturefill</a></h4>
+        <h4><a href="https://github.com/BBC-News/Imager.js/">Imager</a></h4>
       </section>
     </article>
     <script src="scripts/scripts.js"></script>
