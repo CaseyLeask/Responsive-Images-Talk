@@ -29,7 +29,7 @@ html
             span.classy CaseyLeask
 
       section
-        h1 This talk contains HTML, CSS &amp; Javascript
+        h1 This talk contains HTML, CSS &amp; not much Javascript
 
       section
         h1 Examples of Responsive Design Frameworks
@@ -47,30 +47,32 @@ html
         h1 None of these solutions handle all use-cases
 
       section
-        h1 Solutions I'm ignoring
-        h2 Image Processing
-        h2 Server Side solutions
-        h2 CSS Background images
+        h2 What I'm not going to talk about
+        h4 Image Processing
+        h4 Server Side solutions
+        h4 CSS Background images
 
       section
         h1 HTML Spec &amp; Proposals
         img(src="images/HTML5_logo_and_wordmark.svg", alt="HTML5 Logo and Wordmark")
 
       section
-        h2 Standard Image
+        h2 A standard Image
         pre
           code.language-markup.
             &lt;img src="./images/kevin.png" alt="Kevin the Gopher" &gt;
         hr
-        img(src="images/kevin.png", alt="Kevin the Gopher")
+        div
+          img(src="images/kevin.png", alt="Kevin the Gopher")
 
       section
-        h2 Standard Image with srcset
+        h2 A standard Image with srcset
         pre
           code.language-markup.
             &lt;img src="./images/kevin.png" srcset="./images/kevin-2x.png 2x" alt="Kevin the Gopher" &gt;
         hr
-        img(src="images/kevin-2x.png", alt="Kevin the Gopher")
+        div
+          img(src="images/kevin-2x.png", alt="Kevin the Gopher")
 
       section
         h2 Picture Proposal
@@ -156,7 +158,10 @@ html
             &lt;meta name="breakpoint" content="widescreen" media="(min-width: 1024px)"&gt;
 
       section(data-bespoke-state='metaquery')
-        h2 Style off those breakpoints
+        h1 Use those breakpoints in two ways
+
+      section(data-bespoke-state='metaquery')
+        h2 First, style off those breakpoints
         hr
         pre
           code.language-css
@@ -166,7 +171,7 @@ html
             &nbsp;.breakpoint-widescreen { background: yellow; }
 
       section(data-bespoke-state='metaquery')
-        h2 Use in images
+        h2 And use in image markup
         hr
         pre
           code.language-markup.
@@ -180,6 +185,9 @@ html
             &lt;noscript&gt;
               &lt;img src="./images/phone.jpg" alt="Description"&gt;
             &lt;/noscript&gt;
+
+      section(data-bespoke-state='metaquery')
+        h1 Image markup may get removed and become a plugin later
 
       section(data-bespoke-state='responsivenews')
         h1 Imager, by @ResponsiveNews
@@ -211,28 +219,31 @@ html
               new Imager({ availableWidths: [200, 260, 320, 600] });
             &lt;/script&gt;
 
+      section(data-bespoke-state='responsivenews')
+        h1 Only solution to do 'element queries'
+
       section(data-bespoke-state='emphatic')
         img(src="images/profile.jpeg", style="border-radius:50%;")
         hr
         h1 Thanks!
-        h3
+        h4
           a(href="twitter.com/caseyleask") @CaseyLeask
 
       section(data-bespoke-state='emphatic')
         h1 Resources
-        h3 
+        h4 
           a(href="http://getbootstrap.com/") Twitter Bootstrap
-        h3 
+        h4 
           a(href="http://framelessgrid.com/") Frameless
-        h3
+        h4
           a(href="http://responsivenews.co.uk/post/50092458307/images") BBC Responsive News Technique
-        h3
+        h4
           a(href="http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/") Choosing a Responsive Image Solution
-        h3
+        h4
           a(href="https://github.com/benschwarz/metaquery") Metaquery
-        h3
+        h4
           a(href="https://github.com/scottjehl/picturefill") Picturefill
-        h3
+        h4
           a(href="https://github.com/BBC-News/Imager.js/") Imager
 
     // build:js scripts/scripts.js
