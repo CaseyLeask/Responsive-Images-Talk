@@ -25,13 +25,14 @@ html
           .classy by this guy
         img(src="images/profile.jpeg", style="border-radius:50%;")
         .byline
-          a(href="http://twitter.com/CaseyLeask") @CaseyLeask
+          a(href="http://twitter.com/CaseyLeask") @
+            span.classy CaseyLeask
 
       section
         h1 This talk contains HTML, CSS &amp; Javascript
 
       section
-        h1 Examples of Responsive Design
+        h1 Examples of Responsive Design Frameworks
 
       section(data-bespoke-state='frameless')
         img(src="images/frameless.png")
@@ -43,7 +44,10 @@ html
         h1 Responsive Images are still an unsolved problem
 
       section
-        h1.bullet Options I'm ignoring
+        h1 None of these solutions handle all use-cases
+
+      section
+        h1 Solutions I'm ignoring
         h2 Image Processing
         h2 Server Side solutions
         h2 CSS Background images
@@ -98,10 +102,11 @@ html
         h1 Javascript solutions
 
       section(data-bespoke-state='picturefill')
-        h1 Picturefill, by @scottjehl
+        h2 Picturefill, by @scottjehl
         img(src="images/scottjehl.jpeg", style="border-radius: 2em;")
 
       section(data-bespoke-state='picturefill')
+        h2 Mimics the proposed Picture element
         pre
           code.language-markup.
             &lt;span data-picture data-alt="The Bayon temple in Cambodia"&gt;
