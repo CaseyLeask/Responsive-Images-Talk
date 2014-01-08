@@ -500,8 +500,9 @@ li {
   margin-bottom: 12px;
 }
 p {
-  margin: 0 100px 12px;
-  line-height: 22px;
+  font-size: 1.75em;
+  margin: 0.3em 100px;
+  line-height: 1.25em;
 }
 a {
   color: #0089f3;
