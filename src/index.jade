@@ -117,6 +117,25 @@ html
               &lt;/noscript&gt;
             &lt;/span&gt;
 
+      section(data-bespoke-state='picturefill')
+        h2 How it actually runs
+        pre
+          code.language-markup.
+            &lt;span data-picture="" data-alt="The Bayon temple in Cambodia"&gt;
+              &lt;span data-src="small.jpg"&gt;&lt;/span&gt;
+              &lt;span data-src="medium.jpg" data-media="(min-width: 400px)"&gt;&lt;/span&gt;
+              &lt;span data-src="large.jpg" data-media="(min-width: 800px)"&gt;&lt;/span&gt;
+              &lt;span data-src="extralarge.jpg" data-media="(min-width: 1000px)"&gt;
+                &lt;img alt="The Bayon temple in Cambodia" src="extralarge.jpg"&gt;
+              &lt;/span&gt;
+
+              &lt;!-- Fallback content for non-JS browsers.
+                   Same img src as the initial, unqualified source element. --&gt;
+              &lt;noscript&gt;
+                &lt;img src="small.jpg" alt="The Bayon temple in Cambodia"&gt;
+              &lt;/noscript&gt;
+            &lt;/span&gt;
+
       section(data-bespoke-state='metaquery')
         h1 Metaquery, by @benschwarz
         img(src="images/benschwarz.png")
